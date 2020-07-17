@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_040450) do
+ActiveRecord::Schema.define(version: 2020_07_17_040645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2020_07_17_040450) do
     t.index ["user_id"], name: "index_borrows_on_user_id"
   end
 
+  create_table "returns", force: :cascade do |t|
+    t.bigint "borrow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["borrow_id"], name: "index_returns_on_borrow_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -44,4 +51,5 @@ ActiveRecord::Schema.define(version: 2020_07_17_040450) do
 
   add_foreign_key "borrows", "books"
   add_foreign_key "borrows", "users"
+  add_foreign_key "returns", "borrows"
 end
