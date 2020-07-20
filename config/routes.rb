@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'returns/index'
   get 'borrows/index'
   resources :books
   resources :users
