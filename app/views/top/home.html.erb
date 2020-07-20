@@ -2,5 +2,5 @@
 
 <ul>
   <li><%= link_to '本を借りる', books_path %></li>
-  <li><%= link_to '本を返す', books_path %></li>
+  <li><%= link_to '本を返す', borrows_path(user_id: 1) %></li>
 </ul>
