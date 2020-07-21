@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.string :title, null: false
       t.string :sub_title
-      t.string :auther
+      t.string :author
       t.string :isbn_code, null: false
       t.string :jan_code
       t.string :image_url
@@ -11,7 +11,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :item_url
 
 
-      t.date :released_at
+      t.string :released_at
 
       t.timestamps
     end
