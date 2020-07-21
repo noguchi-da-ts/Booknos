@@ -2,14 +2,14 @@
 
 <h1>Books SP</h1>
 
-<ul class="p-books-index u-no-padding">
+<ul class="p-books-index no-padding">
   <% @books.each do |book| %>
-    <li class="p-books-list u-flex-row">
+    <li class="p-books-list flex-row">
       <div class="p-book-image">
         <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
                       alt: "iamge #{book.title}", class: "" %>
       </div>
-      <div class="p-book-info-mini u-flex-col">
+      <div class="p-book-info-mini flex-col">
         <h4><%= "「#{book.title}」" %></h4>
         <p><%= book.author %></p>
         <p><%= "発売日 : #{book.released_at}" %></p>
