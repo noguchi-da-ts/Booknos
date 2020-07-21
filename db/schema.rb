@@ -17,10 +17,14 @@ ActiveRecord::Schema.define(version: 2020_07_17_040645) do
 
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
-    t.string "auther"
-    t.string "isbn_code"
+    t.string "sub_title"
+    t.string "author"
+    t.string "isbn_code", null: false
     t.string "jan_code"
-    t.date "released_at"
+    t.string "image_url"
+    t.text "caption"
+    t.string "item_url"
+    t.string "released_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
