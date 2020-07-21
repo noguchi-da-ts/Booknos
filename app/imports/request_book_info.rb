@@ -1,9 +1,4 @@
-# /confog/initializers/rakuten.rbにapiキーを格納する
-
-# RakutenWebService.configure do |c|
-#   # (必須) アプリケーションID
-#   c.application_id = '************'
-# end
+# /confog/initializers/rakuten.rb でapp_idをread
 
 class RequestBookInfo
 

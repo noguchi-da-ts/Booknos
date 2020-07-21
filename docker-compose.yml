@@ -24,6 +24,7 @@ services:
     depends_on:
       - postgres
     restart: always
+    env_file: .env
 volumes:
   postgresql-data:
     driver: local
