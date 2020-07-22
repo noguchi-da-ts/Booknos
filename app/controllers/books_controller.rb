@@ -17,6 +17,14 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  def ajax_book_register
+    @rakuten_book = RequestBookInfo.search(params[:isbn_code])
+    if @rakuten_book
+      render partial: 'ajax_book_register'
+    else
+    end
+  end
+
   # GET /books/1/edit
   def edit
   end

@@ -1,0 +1,15 @@
+<div class="">
+  <div class="">
+    <%= image_tag @rakuten_book.large_image_url ? @rakuten_book.large_image_url : 'book_gijutsusyo_it_set.png', 
+                  alt: "iamge #{@rakuten_book.title}", class: "" %>
+  </div>
+  <div class="">
+    <h4><%= "タイトル : #{@rakuten_book.title}" %></h4>
+    <p><%= "サブタイトル : #{@rakuten_book.sub_title}" %></p>
+    <p><%= "著者 : #{@rakuten_book.author}" %></p>
+    <p><%= "ISBN : #{@rakuten_book.isbn}" %></p>
+    <p><%= "概要 : #{@rakuten_book.item_caption}" %></p>
+    <p><%= "発売 : #{@rakuten_book.sales_date}" %></p>
+  </div>
+</li>
+

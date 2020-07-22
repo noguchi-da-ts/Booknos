@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'top#home'
 
   get '/borrows/:user_id', to: 'borrows#index'
+
+  get '/books/ajax_book_register'
   
   resources :borrows, only: [:new, :create]
   resources :returns, only: [:new, :create]
