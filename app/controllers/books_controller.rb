@@ -22,6 +22,8 @@ class BooksController < ApplicationController
     if @rakuten_book
       render partial: 'ajax_book_register'
     else
+      @book = Book.new
+      render partial: 'ajax_manual_register'
     end
   end
 

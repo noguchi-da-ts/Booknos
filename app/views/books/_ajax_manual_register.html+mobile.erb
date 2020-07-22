@@ -1,0 +1,11 @@
+<strong>※楽天APIで本を見つけることができませんでした</strong>
+
+<p>手動で追加をお願いします</p>
+
+<%= form_for(@book) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.submit "登録する", class: "btn btn-primary" %>
+<% end %>
+
