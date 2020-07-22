@@ -7,7 +7,15 @@ class CreateTestData
   @@test_books = [
     {isbn_code: '9784797386660'},
     {isbn_code: '9784422100517'},
-    {isbn_code: '9784863542457'}
+    {isbn_code: '9784863542457'},
+    {isbn_code: '9784798153094'},
+    {isbn_code: '9784295005520'},
+    {isbn_code: '9784822237448'},
+    {isbn_code: '9784873117782'},
+    {isbn_code: '9784797396805'},
+    {isbn_code: '9784873115658'},
+    {isbn_code: '9784822257903'},
+    {isbn_code: '9784532321437'}
   ]
 
   @@test_borrows = [
