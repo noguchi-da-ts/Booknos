@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @book = Book.find(params[:id])
   end
 
   # GET /books/new
@@ -39,11 +40,18 @@ class BooksController < ApplicationController
     )
     @book = Book.find_by(request_book)
     if @book
+      flash[:alert] = '※すでに登録済みの本です'
       redirect_to book_path(id: @book.id)
     else
-      @new_book = Book.new(request_book);
-      @new_book.save!
-      redirect_to book_path(id: @new_book.id)
+      new_book = Book.new(request_book);
+      if new_book.save!
+        @book = new_book
+        flash[:success] = '本の登録が成功しました！'
+        redirect_to book_path(id: new_book.id)
+      else
+        flash[:alert] = '本の登録に失敗しました'
+        redirect_to root_path
+      end
     end
   end
 

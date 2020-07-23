@@ -2,3 +2,19 @@
 body {
   background-color: rgb(203, 229, 250);
 }
+
+.notifications {
+  width: 90%;
+  border: 3px solid #CCC;
+  margin: 2vh auto;
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+  .alert {
+    background: gold;
+  }
+  .success {
+    background: lightgreen;
+  }
+}
