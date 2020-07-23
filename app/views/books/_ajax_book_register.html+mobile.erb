@@ -10,6 +10,18 @@
     <p><%= "ISBN : #{@rakuten_book.isbn}" %></p>
     <p><%= "概要 : #{@rakuten_book.item_caption}" %></p>
     <p><%= "発売 : #{@rakuten_book.sales_date}" %></p>
+
+    <%= form_for(@book, url: books_path, method: :post) do |f| %>
+      <%= f.hidden_field :title, :value => @rakuten_book.title  %>
+      <%= f.hidden_field :sub_title, :value => @rakuten_book.sub_title %>
+      <%= f.hidden_field :author, :value => @rakuten_book.author %>
+      <%= f.hidden_field :isbn_code, :value => @rakuten_book.isbn %>
+      <%= f.hidden_field :caption, :value => @rakuten_book.item_caption %>
+      <%= f.hidden_field :released_at, :value => @rakuten_book.sales_date %>
+      <%= f.hidden_field :image_url, :value => @rakuten_book.large_image_url %>
+      <%= f.hidden_field :item_url, :value => @rakuten_book.item_url %>
+      <%= f.submit 'この本を登録する', class: "" %>
+    <% end %>
   </div>
 </div>
 

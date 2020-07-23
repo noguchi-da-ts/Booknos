@@ -95,4 +95,13 @@
     font-size: 2.5rem;
     font-weight: bold;
   }
+  input {
+    margin-top: 2vh;
+    width: 100%;
+    font-size: 3vh;
+    border-radius: 42px;
+    background-color: rgb(230, 230, 230);
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px black);
+  }
 }
