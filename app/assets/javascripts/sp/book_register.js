@@ -19,7 +19,14 @@ $(document).on('click', '#isbn_submit_button', function (){
     });
   } else {
     $('#book_search_result')
-      .html("<strong>※ISBNコードのチェックに引っかかりました。もう一度確認してください。</strong>");
+      .html(`<div style=\"margin-top: 2vh;\">\
+                <strong style=\"font-size: 2vh;\">\
+                  ※ISBNコードのチェックに引っかかりました。\
+                  もう一度確認してください。\
+                  <br/>\
+                  入力された値: ${isbn}\
+                </strong>\
+              </div>`);
   }
   
 });
