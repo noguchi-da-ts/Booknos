@@ -20,7 +20,7 @@ $(document).on('click', '#isbn_submit_button', function (){
   } else {
     $('#book_search_result')
       .html(`<div style=\"margin-top: 2vh;\">\
-                <strong style=\"font-size: 2vh;\">\
+                <strong style=\"font-size: 3vh;\">\
                   ※ISBNコードのチェックに引っかかりました。\
                   もう一度確認してください。\
                   <br/>\

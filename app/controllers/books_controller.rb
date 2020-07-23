@@ -34,16 +34,16 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
-
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
+    request_book = params[:book].permit(
+      :title, :sub_title, :author, :isbn_code, :released_at, :image_url, :item_url, :caption
+    )
+    @book = Book.find_by(request_book)
+    if @book
+      redirect_to book_path(id: @book.id)
+    else
+      @new_book = Book.new(request_book);
+      @new_book.save!
+      redirect_to book_path(id: @new_book.id)
     end
   end
 
