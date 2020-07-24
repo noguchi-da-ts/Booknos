@@ -17,10 +17,10 @@
       </div>
       <div class="p-book-link-button">
         <button>
-          <%= link_to '詳細を見る', book_path(book.id) %>
+          <%= link_to '詳細', book_path(book.id) %>
         </button>
         <button>
-          <%= link_to 'この本を借りる', new_borrow_path(id: book.id) %>
+          <%= link_to '借りる', new_borrow_path(id: book.id) %>
         </button>
       </div>
     </li>

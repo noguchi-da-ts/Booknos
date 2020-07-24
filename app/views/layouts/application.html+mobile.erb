@@ -11,6 +11,17 @@
 
   <body>
     <%= render 'layouts/header' %>
+
+    <% if flash.first %>
+      <div class="notifications">
+        <% flash.each do |key, value| %>
+          <div class="<%= key %>">
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
