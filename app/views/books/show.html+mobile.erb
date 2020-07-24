@@ -1,1 +1,36 @@
-
+<div class="u-flex-col">
+  <div class="p-book-show-img">
+    <%= image_tag @book.image_url ? @book.image_url : 'book_gijutsusyo_it_set.png', 
+                  alt: "iamge #{@book.title}", class: "" %>
+  </div>
+  <table class="p-book-show-info">
+    <tr>
+      <td class="info-item">タイトル</td>
+      <td class="info-value"><h4><%= @book.title %></h4></td>
+    </tr>
+    <tr>
+      <td class="info-item">サブタイトル</td>
+      <td class="info-value"><%= @book.sub_title %></td>
+    </tr>
+    <tr>
+      <td class="info-item">著者</td>
+      <td class="info-value"><%= @book.author %></td>
+    </tr>
+    <tr>
+      <td class="info-item">概要</td>
+      <td class="info-value"><%= @book.caption %></td>
+    </tr>
+    <tr>
+      <td class="info-item">発売</td>
+      <td class="info-value"><%= @book.released_at %></td>
+    </tr>
+    <tr>
+      <td class="info-item">楽天ブックス</td>
+      <td class="info-value"><%= link_to "楽天のサイトを見る", @book.item_url, target: '_blank' %></td>
+    </tr>
+    <tr>
+      <td class="info-item">ISBN</td>
+      <td class="info-value"><%= @book.isbn_code %></td>
+    </tr>
+  </table>
+</div>
