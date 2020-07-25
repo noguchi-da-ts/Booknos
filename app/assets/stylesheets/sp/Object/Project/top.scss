@@ -6,22 +6,22 @@
   width: 90vw;
   margin: 2vh auto;
   height: 65vh;
-  ul {
+  div.flex-col {
     margin: 3vh 0;
     padding-left: 0;
   }
-  li {
+  button {
     border: 10px ridge lightblue;
     width: 80%;
     height: 7vh;
     margin: 2vh auto;
     list-style: none;
     background: whitesmoke;
-    filter: drop-shadow(2px 4px 6px, black);
+    filter: drop-shadow(17px 19px 15px black);
     a { 
       display: block;
-      padding-top: 1.3vh;
-      height: 6vh;
+      padding-top: 1vh;
+      height: 5vh;
       width: 100%;
       font-size: 3vh;
       text-align: center;
