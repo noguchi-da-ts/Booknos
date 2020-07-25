@@ -7,9 +7,17 @@
 
     <%= stylesheet_link_tag    'sp/application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'sp/application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <!-- iScroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
   </head>
 
-  <body>
+  <body class="drawer drawer--right">
+    <%= javascript_include_tag "sp/drawer.js" %>
     <%= render 'layouts/header' %>
 
     <% if flash.first %>
