@@ -1,7 +1,7 @@
-<h1>トップページ</h1>
-
-<ul>
-  <li><%= link_to '本を借りる', books_path %></li>
-  <li><%= link_to '本を返す', returns_path(user_id: 1) %></li>
-  <li><%= link_to '新しく本を登録する', new_book_path %></li>
+<div class="p-top-home">
+  <ul class="flex-col">
+    <li><%= link_to '本を借りる', books_path %></li>
+    <li><%= link_to '本を返す', returns_path(user_id: 1) %></li>
+    <li><%= link_to '新しく本を登録する', new_book_path %></li>
+  </ul>
 </ul>
