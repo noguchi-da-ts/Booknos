@@ -4,24 +4,35 @@
 
 <ul class="p-books-index no-padding">
   <% @books.each do |book| %>
-    <li class="p-books-list flex-row">
-      <div class="p-book-image">
-        <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
-                      alt: "iamge #{book.title}", class: "" %>
-      </div>
-      <div class="p-book-info-mini flex-col">
-        <h4><%= "#{book.title}
-        " %></h4>
-        <p><%= book.author %></p>
-        <p><%= "発売 : #{book.released_at}" %></p>
-      </div>
-      <div class="p-book-link-button">
-        <button>
-          <%= link_to '詳細', book_path(book.id) %>
-        </button>
-        <button>
-          <%= link_to '借りる', new_borrow_path(id: book.id) %>
-        </button>
+    <li class="p-book-info-mini flex-col">
+      <div class="flex-row">
+        <div class="image-left">
+          <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
+                        alt: "iamge #{book.title}", class: "" %>
+        </div>
+
+        <div class="p-book-detail-mini">
+          <h4><%= "#{book.title}
+          " %></h4>
+          <p><%= book.author %></p>
+          <p><%= "発売 : #{book.released_at}" %></p>
+
+          <% if book.is_rentaled %>
+            <p class="book-status">
+              この本は借りられています
+            </p>
+          <% end %>
+
+          <div class="link-buttons">
+            <button>
+              <%= link_to '詳細', book_path(book.id) %>
+            </button>
+            <button>
+              <%= link_to '借りる', new_borrow_path(id: book.id) %>
+            </button>
+          </div>
+
+        </div>
       </div>
     </li>
   <% end %>

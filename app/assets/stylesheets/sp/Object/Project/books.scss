@@ -7,51 +7,53 @@
   margin: 18px 12px 36px 12px;
 }
 
-.p-books-list {
+.p-book-info-mini {
   margin: 24px 0;
   padding: 12px;
-  height: 15vh;
+  min-height: 15vh;
   background-color: white;
   border-radius: 10px;
-}
-
-.p-book-image {
-  width: 25%;
-  img {
-    max-width: 90%;
-    height: 100%;
-    object-fit: contain;
+  div.flex-row {
+    min-height: 15vh;
+  }
+  .image-left {
+    width: 25%;
+    min-height: 14vh;
     margin-right: 24px;
+    img {
+      max-width: 90%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }
 
-.p-book-info-mini {
-  width: 50%;
-  object-fit: contain;
-  height: 100%;
-  overflow: hidden;
+.p-book-detail-mini {
+  width: 75%;
   h4 {
     font-size: 2.2rem;
-    margin: 0;
+    margin: 0;  
   }
   p {
+    font-weight: bold;
     font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
   }
-}
-
-.p-book-link-button {
-  padding-left: 12px;
-  width: 25%;
-  button {
-    width: 100%;
-    height: 40%;
-    margin: 5% 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    border-radius: 5px;
-    background-color: rgb(230, 230, 230);
+  .book-status {
+    color: red;
+    font-size: 2rem;
+  }
+  .link-buttons {
+    justify-content: space-around;
+    display: flex;
+    button {
+      width: 40%;
+      height: 5rem;
+      margin: 12px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-radius: 5px;
+      background-color: rgb(230, 230, 230);
+    }
   }
 }
 
