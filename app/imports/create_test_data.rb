@@ -20,7 +20,9 @@ class CreateTestData
 
   @@test_borrows = [
     {book_id: 1, user_id: 1, is_returned: true, created_at: '2020-01-01 12:00:00'}, 
-    {book_id: 2, user_id: 1, created_at: '2020-01-01 12:00:00'}
+    {book_id: 2, user_id: 1, created_at: '2020-01-01 12:00:00'},
+    {book_id: 3, user_id: 2, created_at: '2020-01-01 12:00:00'},
+    {book_id: 3, user_id: 1, created_at: '2020-01-01 12:00:00'}
   ]
 
   @@test_returns = [
