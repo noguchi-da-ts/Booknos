@@ -44,13 +44,13 @@ class BooksController < ApplicationController
       redirect_to book_path(id: @book.id)
     else
       new_book = Book.new(request_book);
-      if new_book.save!
+      if new_book.save
         @book = new_book
         flash[:success] = '本の登録が成功しました！'
         redirect_to book_path(id: new_book.id)
       else
-        flash[:alert] = '本の登録に失敗しました'
-        redirect_to root_path
+        flash[:alert] = '本の登録に失敗しました。タイトルもしくはISBNコードの文字数が間違っている可能性があります。'
+        redirect_to new_book_path
       end
     end
   end
