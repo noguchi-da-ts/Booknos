@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 2020_07_17_040645) do
   end
 
   create_table "borrows", force: :cascade do |t|
-    t.bigint "book_id"
-    t.bigint "user_id"
+    t.bigint "book_id", null: false
+    t.bigint "user_id", null: false
+    t.boolean "is_returned", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_borrows_on_book_id"

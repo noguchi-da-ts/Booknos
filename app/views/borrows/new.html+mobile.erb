@@ -24,15 +24,13 @@
       <td class="info-item">発売</td>
       <td class="info-value"><%= @book.released_at %></td>
     </tr>
-    <tr>
-      <td class="info-item">購入</td>
-      <td class="info-value"><%= link_to "楽天のサイトを見る", @book.item_url, target: '_blank' %></td>
-    </tr>
-    <tr>
-      <td class="info-item">ISBN</td>
-      <td class="info-value"><%= @book.isbn_code %></td>
-    </tr>
   </table>
+
+  <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form" }) do |f| %>
+    <%= f.hidden_field :book_id, :value => @book.id  %>
+    <%= f.hidden_field :user_id, :value => 1 %>
+    <%= f.submit 'この本を借りる' %>
+  <% end %>
 
   <button class="button-design">
     <%= link_to '一覧へ戻る', books_path %> 
