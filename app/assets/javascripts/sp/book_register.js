@@ -6,7 +6,7 @@ $(document).on('click', '#isbn_submit_button', function (){
   let isbn = $('#isbn_form').val();
   isbn = normalizationIsbn(isbn);
 
-  if ( validateIsbn(isbn) ) {
+  if ( isbn != '' ) {
     console.log(`入力されたISBN: ${isbn}`);
     $.ajax({
       type: "GET",
@@ -22,9 +22,8 @@ $(document).on('click', '#isbn_submit_button', function (){
       .html(`<div style=\"margin-top: 2vh;\">\
                 <strong style=\"font-size: 3vh;\">\
                   ※ISBNコードのチェックに引っかかりました。\
-                  もう一度確認してください。\
                   <br/>\
-                  入力された値: ${isbn}\
+                  もう一度入力してください。\
                 </strong>\
               </div>`);
   }
@@ -37,12 +36,4 @@ function normalizationIsbn(isbn) {
     return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
   });
   return isbn
-}
-
-function validateIsbn(isbn) {
-  if( isbn.length == 13 ) {
-    return true;
-  } else {
-    return false;
-  }
 }

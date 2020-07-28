@@ -26,7 +26,11 @@
     </tr>
     <tr>
       <td class="info-item">購入</td>
-      <td class="info-value"><%= link_to "楽天のサイトを見る", @book.item_url, target: '_blank' %></td>
+      <td class="info-value">
+        <% if @book.item_url %>
+          <%= link_to "楽天のサイトを見る", @book.item_url, target: '_blank' %>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <td class="info-item">ISBN</td>

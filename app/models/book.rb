@@ -1,4 +1,7 @@
 class Book < ApplicationRecord
+  validates :title, presence: true, length: { in: 1..200, wrong_length: 'タイトルは1文字以上' }
+  validates :isbn_code, presence: true, length: { in: 10..13, wrong_length: 'ISBNは10桁か13桁です'}
+
   has_many :borrows
 
   def is_rentaled
