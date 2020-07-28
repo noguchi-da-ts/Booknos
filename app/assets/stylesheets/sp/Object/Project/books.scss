@@ -141,4 +141,13 @@
   a {
     color: blue;
   }
+  button {
+    font-size: 4vh;
+    width: 40%;
+    margin: auto;
+    border-radius: 42px;
+    background-color: rgb(230, 230, 230);
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px black);
+  }
 }
