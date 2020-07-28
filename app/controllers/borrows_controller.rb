@@ -15,7 +15,7 @@ class BorrowsController < ApplicationController
       redirect_to books_path
     else
       new_borrow = Borrow.new(request_borrow);
-      if new_borrow.save!
+      if new_borrow.save
         flash[:success] = '以下の本を借りました！'
         redirect_to book_path(id: new_borrow.book_id)
       else
