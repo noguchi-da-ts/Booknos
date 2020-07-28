@@ -59,7 +59,7 @@
 
 .p-isbn-search-form {
   width: 80vw;
-  margin: 0 auto;
+  margin: 5vh auto 0;
   input {
     text-align: center;
     margin-bottom: 60px;
@@ -149,5 +149,24 @@
     background-color: rgb(230, 230, 230);
     font-weight: bold;
     filter: drop-shadow(2px 4px 6px black);
+  }
+}
+
+.p-book-manual-register {
+  margin: 6vh auto 3vh;
+  font-size: 2.5rem;
+  .register-form {
+    span {
+      color: red;
+      font-weight: bold;
+    }
+  }
+  input {
+    font-size: 2.5rem
+  }
+  textarea {
+    height: 20rem;
+    font-size: 2rem;
+    margin-bottom: 60px;
   }
 }

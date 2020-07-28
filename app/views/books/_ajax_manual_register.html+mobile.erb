@@ -1,11 +1,28 @@
-<strong>※楽天APIで本を見つけることができませんでした</strong>
+<div class="p-book-manual-register flex-col">
+  <strong>※楽天APIで本を見つけることができませんでした</strong>
 
-<p>手動で追加をお願いします</p>
+  <p>手動で追加をお願いします</p>
 
-<%= form_for(@book) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control' %>
+  <%= form_for(@book, url: books_path, method: :post, html: { class: "register-form flex-col" }) do |f| %>
+    <%= f.label :title, 'タイトル' %><span>※必須</span>
+    <%= f.text_field :title, class: 'str-length' %>
 
-  <%= f.submit "登録する", class: "btn btn-primary" %>
-<% end %>
+    <%= f.label :sub_title, 'サブタイトル' %>
+    <%= f.text_field :sub_title, class: 'str-length' %>
+
+    <%= f.label :author, '著者' %>
+    <%= f.text_field :author, class: 'str-length' %>
+
+    <%= f.label :isbn_code, 'ISBNコード' %><span>※必須</span>
+    <%= f.text_field :isbn_code, class: 'str-length' %>
+
+    <%= f.label :caption, '概要' %>
+    <%= f.text_area :caption, class: 'txt-length' %>
+
+    <%= f.label :released_at, '発売時期' %>
+    <%= f.text_field :released_at, class: 'str-length' %>
+
+    <%= f.submit "登録する", class: "button-design" %>
+  <% end %>
+</div>
 
