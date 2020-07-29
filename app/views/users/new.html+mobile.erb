@@ -1,7 +1,7 @@
 <div class="p-user-new-form">
   <p>ユーザー情報入力</p>
 
-  <%= form_for(@user, url: users_path, method: :post, html: { class: "flex-col" }) do |f| %>
+  <%= form_for(@user, url: signup_path, method: :post, html: { class: "flex-col" }) do |f| %>
     <%= render 'shared/error_messages' %>
 
     <%= f.label :name, "ニックネーム" %>
