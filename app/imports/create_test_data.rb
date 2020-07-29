@@ -1,7 +1,7 @@
 class CreateTestData
   @@test_users = [
-    {name: '蜂の巣太郎', email: 'beenos@example.com'},
-    {name: '蜂の巣花子', email: 'tenso@example.com'}
+    {name: '蜂の巣太郎', email: 'beenos@example.com', password: "foobar", password_confirmation: "foobar"},
+    {name: '蜂の巣花子', email: 'tenso@example.com', password: "foobar", password_confirmation: "foobar"}
   ]
 
   @@test_books = [
@@ -31,7 +31,7 @@ class CreateTestData
 
   def self.import
     @@test_users.each do |user|
-      User.create(user) unless User.find_by(user)
+      User.create(user) unless User.find_by(name: user[:name], email: user[:email])
     end
 
     @@test_books.each do |test_book|
@@ -49,7 +49,7 @@ class CreateTestData
         book.released_at = response.sales_date
         book.save!
       elsif registered
-        puts "「#{response.title}」は登録済"
+        puts "登録済  =>  「#{response.title}」"
       else
         puts "ISBN : #{test_book[:isbn_code]}は見つかりませんでした"
       end
