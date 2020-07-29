@@ -27,13 +27,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
+    is_existing = User.find_by(name: @user.name, email: @user.email)
+    if is_existing
+      flash[:alert] = '※このネームとアドレスは登録済です'
+      render "new"
+    else
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        flash[:success] = 'ユーザーを登録しました！'
+        redirect_to user_path(@user)
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash[:alert] = 'ユーザー登録に失敗しました'
+        render "new"
       end
     end
   end
@@ -70,6 +74,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'top#home'
   get '/books/ajax_book_register'
+  get '/signup', to: 'users#new'
 
   resources :borrows, only: [:new, :create]
   resources :returns, only: [:new, :create]
