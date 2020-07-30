@@ -10,12 +10,12 @@
     <nav class="drawer-nav" role="navigation">
       <ul class="drawer-menu drawer-menu--right">
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Settings", '#' %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li class="drawer-menu-item"><%= link_to "Users", '#' %></li>
+          <li class="drawer-menu-item"><%= link_to "Profile", current_user %></li>
+          <li class="drawer-menu-item"><%= link_to "Settings", '#' %></li>
+          <li class="drawer-menu-item"><%= link_to "Log out", logout_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li class="drawer-menu-item"><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
     </nav>
