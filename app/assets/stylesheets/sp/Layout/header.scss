@@ -23,15 +23,14 @@ header {
 }
 
 .drawer-menu-item {
-  font-size: 1.35rem;
-  padding: .75rem 2.25rem;
+  font-size: 3.5rem !important;
+  padding: 1rem 2.25rem !important;
   &:before {
     position: absolute;
     right: 14px;
     width: 14px;
-    height: 16px;
+    height: 1.5rem;
     color: #666;
-    content: ">";
     font-weight: bold;
   }
   &:hover {

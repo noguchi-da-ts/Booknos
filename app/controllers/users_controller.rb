@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -33,6 +35,7 @@ class UsersController < ApplicationController
       render "new"
     else
       if @user.save
+        log_in @user
         flash[:success] = 'ユーザーを登録しました！'
         redirect_to user_path(@user)
       else
