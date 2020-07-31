@@ -1,17 +1,17 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for(@user, html: { class: "flex-col" }) do |f| %>
+  <%= render 'shared/error_messages' %>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.label :name, "ニックネーム" %>
+  <%= f.text_field :name %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.label :email, "Eメールアドレス" %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, "パスワード" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "パスワード 確認" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit yield(:button_text), class: "button-design" %>
 <% end %>
