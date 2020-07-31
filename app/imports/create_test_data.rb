@@ -1,7 +1,8 @@
 class CreateTestData
   @@test_users = [
     {name: '蜂の巣太郎', email: 'beenos@example.com', password: "foobar", password_confirmation: "foobar"},
-    {name: '蜂の巣花子', email: 'tenso@example.com', password: "foobar", password_confirmation: "foobar"}
+    {name: '蜂の巣花子', email: 'tenso@example.com', password: "foobar", password_confirmation: "foobar"},
+    {admin: true, name: 'master', email: 'master@master.com', password: "master", password_confirmation: "master"}
   ]
 
   @@test_books = [
