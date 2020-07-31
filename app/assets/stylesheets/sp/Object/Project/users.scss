@@ -49,7 +49,6 @@
   background: whitesmoke;
   padding: 1rem;
   font-size: 5rem;
-  height: 20rem;
   width: 100%;
   margin: 2rem 0;
   border-radius: 1rem;
@@ -61,5 +60,16 @@
   img {
     object-fit: contain;
     margin-right: 5rem;
+  }
+  .delete-box {
+    font-size: 4rem;
+    width: 30%;
+    margin: 0 0 0 auto;
+    padding: 1rem;
+    border: 5px solid red;
+    font-weight: bold;
+    a {
+      justify-content: center;
+    }
   }
 }
