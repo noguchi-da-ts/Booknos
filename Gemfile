@@ -42,12 +42,13 @@ gem 'dotenv-rails'
 
 gem 'rack-user_agent'
 
-gem 'will_paginate',           '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'kaminari'
 
 gem "jquery-rails"
 
 gem 'bcrypt',         '3.1.12'
+
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
