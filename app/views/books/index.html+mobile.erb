@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <ul class="p-books-index no-padding">
+
   <% @books.each do |book| %>
     <li class="p-book-info-mini flex-col">
       <div class="flex-row">
@@ -38,8 +39,7 @@
       </div>
     </li>
   <% end %>
-</ul>
 
-<%= will_paginate %>
+</ul>
 
 <%= link_to 'New Book', new_book_path %>

@@ -2,7 +2,8 @@ header {
   position: fixed;            /* ヘッダーの固定 */
   top: 0px;                   /* 位置(上0px) */
   left: 0px;                  /* 位置(右0px) */
-  width: 100%;                /* 横幅100%　*/
+  width: 100%;               /* 横幅100%　*/
+  z-index: 10 !important;
   h2 {
     margin: 0;
     width: 90%;
