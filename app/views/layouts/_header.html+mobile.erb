@@ -10,7 +10,7 @@
     <nav class="drawer-nav" role="navigation">
       <ul class="drawer-menu drawer-menu--right">
         <% if logged_in? %>
-          <li class="drawer-menu-item"><%= link_to "ユーザー 一覧", '#' %></li>
+          <li class="drawer-menu-item"><%= link_to "ユーザー 一覧", users_path %></li>
           <li class="drawer-menu-item"><%= link_to "マイページ", current_user %></li>
           <li class="drawer-menu-item"><%= link_to "登録情報の変更", edit_user_path(current_user) %></li>
           <li class="drawer-menu-item"><%= link_to "ログアウト", logout_path, method: :delete %></li>
