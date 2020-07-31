@@ -38,28 +38,25 @@
   }
 }
 
-.p-user-index {
-
-}
-
 .p-user-index-list {
-  list-style: none;
   width: 90%;
   margin: 4rem auto;
   padding: 1rem 2rem;
-  li {
-    background: whitesmoke;
-    padding: 1rem;
-    font-size: 5rem;
-    height: 20rem;
+}
+
+.p-user-list {
+  list-style: none;
+  background: whitesmoke;
+  padding: 1rem;
+  font-size: 5rem;
+  height: 20rem;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  a {
+    height: 100%;
     width: 100%;
-    margin: 2rem 0;
-    border-radius: 1rem;
-    a {
-      height: 100%;
-      width: 100%;
-      display: inline-flex;
-    }
+    display: inline-flex;
   }
   img {
     object-fit: contain;
