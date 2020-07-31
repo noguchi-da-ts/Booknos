@@ -1,21 +1,6 @@
-<div class="p-user-new-form">
+<% provide(:button_text, '登録する') %>
+<div class="p-user-form">
   <p>ユーザー情報入力</p>
 
-  <%= form_for(@user, url: signup_path, method: :post, html: { class: "flex-col" }) do |f| %>
-    <%= render 'shared/error_messages' %>
-
-    <%= f.label :name, "ニックネーム" %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email, "Eメールアドレス" %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password, "パスワード" %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation, "パスワード 確認" %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit "Create my account", class: "button-design" %>
-  <% end %>
+  <%= render 'form' %>
 </div>

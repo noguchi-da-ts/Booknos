@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.p-user-new-form {
+.p-user-form {
   width: 90%;
   margin: 3vh auto;
   p {
@@ -34,6 +34,42 @@
   .field_with_errors {
     .form-control {
       color: gray;
+    }
+  }
+}
+
+.p-user-index-list {
+  width: 90%;
+  margin: 4rem auto;
+  padding: 1rem 2rem;
+}
+
+.p-user-list {
+  list-style: none;
+  background: whitesmoke;
+  padding: 1rem;
+  font-size: 5rem;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  a {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+  }
+  img {
+    object-fit: contain;
+    margin-right: 5rem;
+  }
+  .delete-box {
+    font-size: 4rem;
+    width: 30%;
+    margin: 0 0 0 auto;
+    padding: 1rem;
+    border: 5px solid red;
+    font-weight: bold;
+    a {
+      justify-content: center;
     }
   }
 }
