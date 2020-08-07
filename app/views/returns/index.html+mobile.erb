@@ -1,0 +1,29 @@
+<div class="p-return-books">
+  <h4><%= "#{@user.name}さんが借りている本一覧" %></h4>
+
+  <ul>
+    <% @now_rental_books.each do |book| %>
+      <li class="flex-col">
+        <div class="flex-row">
+          <div class="image-left">
+            <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
+                          alt: "iamge #{book.title}", class: "" %>
+          </div>
+
+          <div class="">
+            <p><%= book.title %></p>
+            <p><%= book.author %></p>
+            <p><%= "発売 : #{book.released_at}" %></p>
+
+            <div class="link-buttons">
+              <button>
+                <%= link_to '返却する', book_path(book.id) %>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
