@@ -17,7 +17,7 @@
 
             <div class="link-buttons">
               <button>
-                <%= link_to '返却する', book_path(book.id) %>
+                <%= link_to '返却する', return_path(book.id), method: :post %>
               </button>
             </div>
 

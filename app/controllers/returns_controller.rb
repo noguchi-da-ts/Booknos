@@ -1,12 +1,31 @@
 class ReturnsController < ApplicationController
   include SessionsHelper
 
-  before_action :logged_in_user, only: [:index]
-  before_action :correct_user,   only: [:index]
+  before_action :logged_in_user, only: [:index, :create]
+  before_action :correct_user,   only: [:index, :create]
 
   def index
     borrows = @user.borrows.where(is_returned: false).pluck(:book_id)
     @now_rental_books = Book.where(id: borrows)
+  end
+
+  def create
+    borrow = Borrow.find_by(user_id: @user.id, book_id: params[:id], is_returned: false)
+    puts
+    puts
+    puts
+    p borrow
+    puts
+    puts
+    puts
+    if borrow
+      borrow.update(is_returned: true)
+      Return.create(borrow_id: borrow.id)
+      flash[:success] = '本を返却しました！'
+    else
+      flash[:alert] = '本を返せませんでした'
+    end
+    redirect_to returns_path
   end
 
   private
