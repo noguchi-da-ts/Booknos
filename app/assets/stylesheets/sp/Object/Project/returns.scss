@@ -1,3 +1,13 @@
 // Place all the styles related to the returns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.p-return-books {
+  margin: 18px 12px 36px 12px;
+  h4 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 3vh auto;
+    text-align: center;
+  }
+}
