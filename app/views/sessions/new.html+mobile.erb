@@ -8,8 +8,10 @@
     <%= f.password_field :password, class: 'form-control' %>
 
     <%= f.label :remember_me, class: "checkbox inline" do %>
-      <%= f.check_box :remember_me %>
-      <span>ログイン状態を保持する</span>
+      <div class="flex-row">
+        <%= f.check_box :remember_me %>
+        <p>ログイン状態を保持する</p>
+      </div>
     <% end %>
 
     <%= f.submit "ログイン", class: "button-design" %>

@@ -7,17 +7,21 @@
   margin: 3vh auto;
   label {
     margin-top: 3rem;
-    font-size: 3rem;
+    font-size: 5rem;
   }
-  input {
-    font-size: 3.5rem;
+  input.form-control {
+    height: 10rem;
+    font-size: 7rem;
   }
   #session_remember_me {
     width: auto;
     margin-left: 0;
   }
   .checkbox {
-    margin-left: 2vh;
+    margin: 6rem auto 6rem 3rem;
+    p {
+      margin-left: 10rem;
+    }
   }
   .checkbox input[type=checkbox] {
     width:			24px;
