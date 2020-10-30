@@ -20,8 +20,11 @@ $ docker-compose exec postgres /bash
 $ rails runner "CreateTestData.import"
 ```
 
-### tunnelto起動方法
+### tunnelto
 
+tunneltoのインストール: [agrinman/tunnelto](https://github.com/agrinman/tunnelto)
+
+使い方
 ```zsh
 $ tunnelto --port 3000
 ```
