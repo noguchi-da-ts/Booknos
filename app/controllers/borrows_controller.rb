@@ -1,7 +1,10 @@
 class BorrowsController < ApplicationController
+  include SessionsHelper
+
   def new
     @book = Book.find(params[:id])
     @borrow_request = Borrow.new
+    @user = logged_in ? current_user : nil 
   end
 
   def create
