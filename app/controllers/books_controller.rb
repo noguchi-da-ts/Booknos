@@ -22,9 +22,9 @@ class BooksController < ApplicationController
     @rakuten_book = RequestBookInfo.search(params[:isbn_code])
     @book = Book.new
     if @rakuten_book
-      render partial: 'ajax_book_register'
+      render partial: 'books/ajax/ajax_book_register'
     else
-      render partial: 'ajax_manual_register'
+      render partial: 'books/ajax/ajax_manual_register'
     end
   end
 
