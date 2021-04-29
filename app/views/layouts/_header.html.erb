@@ -1,23 +1,18 @@
-<header class="drawer-navbar" role="banner">
-  <div class="drawer-container">
-    <div class="drawer-navbar-header flex-row">
-      <h2><%= link_to "Booknos", root_path %></h2>
-      <button type="button" class="drawer-toggle drawer-hamburger">
-        <span class="sr-only">toggle navigation</span>
-        <span class="drawer-hamburger-icon"></span>
-      </button>
-    </div>
-    <nav class="drawer-nav" role="navigation">
-      <ul class="drawer-menu drawer-menu--right">
-        <% if logged_in? %>
-          <li class="drawer-menu-item"><%= link_to "ユーザー 一覧", users_path %></li>
-          <li class="drawer-menu-item"><%= link_to "マイページ", current_user %></li>
-          <li class="drawer-menu-item"><%= link_to "登録情報の変更", edit_user_path(current_user) %></li>
-          <li class="drawer-menu-item"><%= link_to "ログアウト", logout_path, method: :delete %></li>
-        <% else %>
-          <li class="drawer-menu-item"><%= link_to "ログイン", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
+<header>
+  <h2 class="txt-center">
+    <%= link_to "Booknos", root_path %>
+  </h2>
+
+  <ul class="flex-inline">
+    <% if logged_in? %>
+      <li class="txt-center"><%= link_to "トップ", root_path %></li>
+      <li class="txt-center"><%= link_to "ユーザー 一覧", users_path %></li>
+      <li class="txt-center"><%= link_to "マイページ", current_user %></li>
+      <li class="txt-center"><%= link_to "登録情報の変更", edit_user_path(current_user) %></li>
+      <li class="txt-center"><%= link_to "ログアウト", logout_path, method: :delete %></li>
+    <% else %>
+      <li class="txt-center"><%= link_to "ログイン", login_path %></li>
+    <% end %>
+  </ul>
+
 </header>

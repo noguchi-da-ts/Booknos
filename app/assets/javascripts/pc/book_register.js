@@ -1,7 +1,3 @@
-$(document).ready(function (){
-  console.log('本の登録機能JSを読み込みました');
-});
-
 $(document).on('click', '#isbn_submit_button', function (){
   let isbn = $('#isbn_form').val();
   isbn = normalizationIsbn(isbn);

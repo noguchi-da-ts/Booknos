@@ -1,0 +1,10 @@
+
+ul.pagination {
+  display: flex;
+  flex-direction: row;
+  font-size: 4rem;
+  list-style: none;
+  justify-content: space-between;
+  margin: 5rem auto;
+  width: 80%;
+}
