@@ -10,7 +10,7 @@ $(document).on('click', '#isbn_submit_button', function (){
     console.log(`入力されたISBN: ${isbn}`);
     $.ajax({
       type: "GET",
-      url: "/books/ajax/ajax_book_register",
+      url: "/books/ajax_book_register",
       data: { 
         isbn_code: isbn
       }
