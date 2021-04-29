@@ -28,7 +28,7 @@
 
   <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form" }) do |f| %>
     <%= f.hidden_field :book_id, :value => @book.id  %>
-    <%= f.hidden_field :user_id, :value => 1 %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.submit 'この本を借りる' %>
   <% end %>
 

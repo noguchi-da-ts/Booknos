@@ -4,7 +4,7 @@ class BorrowsController < ApplicationController
   def new
     @book = Book.find(params[:id])
     @borrow_request = Borrow.new
-    @user = logged_in ? current_user : nil 
+    @user = logged_in? ? current_user : nil 
   end
 
   def create
