@@ -1,0 +1,12 @@
+<div class="p-refine-search-form flex-col">
+  <%= form_tag(refine_search_path, method: :get, class: "") do %>
+
+    <div class="refine-search-field">
+      <%= text_field_tag :keyword %>
+    </div>
+
+    <%= submit_tag "検索", class: "" %>
+
+  <% end %>
+
+</div>

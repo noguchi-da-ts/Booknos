@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   delete '/logout',        to: 'sessions#destroy'
   post   '/return/:id',    to: 'returns#create', as: :return
 
+  get    '/refine_search', to: 'books#refine_search'
+
   resources :borrows, only: [:new, :create]
   resources :returns, only: [:index]
   resources :books

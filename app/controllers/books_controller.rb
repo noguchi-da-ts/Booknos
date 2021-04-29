@@ -7,6 +7,11 @@ class BooksController < ApplicationController
     @books = Book.all.page(params[:page])
   end
 
+  def refine_search
+    @books   = Book.where('title like ?', "%#{params[:keyword]}%")
+    @keyword = params[:keyword]
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show
