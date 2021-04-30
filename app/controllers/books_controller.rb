@@ -4,11 +4,11 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all.page(params[:page])
+    @books = Book.all.page(params[:page]).per(18)
   end
 
   def refine_search
-    @books   = Book.where('title like ?', "%#{params[:keyword]}%")
+    @books   = Book.where('title like ?', "%#{params[:keyword]}%").page(params[:page]).per(18)
     @keyword = params[:keyword]
   end
 

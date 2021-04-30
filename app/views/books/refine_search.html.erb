@@ -1,8 +1,8 @@
-<ul class="p-books-index no-padding">
+<%= render 'refine_search_form' %>
 
-  <%= render 'refine_search_form' %>
+<p>タイトルに "<%= @keyword %>" を含む本の一覧</p>
 
-  <p>タイトルに "<%= @keyword %>" を含む本の一覧</p>
+<ul class="p-books-index no-padding flex-row">
 
   <%= render @books %>
 
