@@ -1,8 +1,10 @@
 <li>
   <div class="flex-col">
     <div class="p-book-image">
-      <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
-                    alt: "iamge #{book.title}", class: "" %>
+      <%= link_to book_path(book.id), class: "p-book-image" do %>
+        <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
+                      alt: "iamge #{book.title}", class: "" %>
+      <% end %>
     </div>
 
     <div class="p-book-detail-mini">

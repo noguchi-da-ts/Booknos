@@ -6,7 +6,7 @@
   <table class="p-book-show-info">
     <tr>
       <td class="info-item">タイトル</td>
-      <td class="info-value"><h4><%= @book.title %></h4></td>
+      <td class="info-value"><%= @book.title %></td>
     </tr>
     <tr>
       <td class="info-item">サブタイトル</td>
@@ -26,7 +26,7 @@
     </tr>
   </table>
 
-  <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form" }) do |f| %>
+  <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form txt-center" }) do |f| %>
     <%= f.hidden_field :book_id, :value => @book.id  %>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.submit 'この本を借りる' %>
