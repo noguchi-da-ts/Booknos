@@ -92,7 +92,7 @@
   input {
     border: none;
     background: none;
-    font-color: black !important;
+    color: black !important;
   }
 }
 
@@ -100,5 +100,20 @@
   h4 {
     margin-bottom: 48px;
     font-weight: bold;
+  }
+}
+
+.p-isbn-search-form {
+  width: 40vw;
+  margin: 0 auto;
+  #isbn_form {
+    height: 48px;
+    font-size: 48px;
+  }
+}
+
+.p-book-manual-register {
+  input.str-length, textarea.txt-length {
+    margin-bottom: 24px;
   }
 }
