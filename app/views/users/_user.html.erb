@@ -1,13 +1,11 @@
 <li class="p-user-list">
-  <div class="user-box">
-    <a href=<%= "/users/#{user.id}"%>>
-      <%= gravatar_for user, size: 200 %>
-      <p><%= user.name %></p>
-    </a>
-  </div>
+  <a href=<%= "/users/#{user.id}"%>>
+    <%= gravatar_for user, size: 200 %>
+    <p><%= user.name %></p>
+  </a>
   <% if current_user.admin? && !current_user?(user) %>
-    <div class="delete-box">
+    <button class="delete-box">
       <%= link_to "削除", user, method: :delete, data: { confirm: "削除しますか?" } %>
-    </div>
+    </button>
   <% end %>
 </li>

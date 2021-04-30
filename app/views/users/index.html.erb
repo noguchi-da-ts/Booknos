@@ -1,11 +1,7 @@
-<div class="p-user-index">
+<%= paginate @users %>
 
-  <%= paginate @users %>
-
-  <ul class="p-user-index-list">
+  <ul class="p-user-index-list flex-row">
     <%= render @users %>
   </ul>
 
-  <%= paginate @users %>
-
-</div>
+<%= paginate @users %>
