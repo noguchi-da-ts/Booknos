@@ -36,8 +36,22 @@
       <td class="info-item">ISBN</td>
       <td class="info-value"><%= @book.isbn_code %></td>
     </tr>
+    <tr>
+      <td class="info-item">貸し出し状況</td>
+      <td class="info-value">
+        <% if @book.is_rentaled %>
+          <% @book.now_borrowers.each_with_index do |borrower, i| %>
+            <%= '、' if i >= 1 %>
+            <%= borrower.name %>さん
+          <% end %>
+          が借りています
+        <% else %>
+          現在借りている人はいません
+        <% end %>
+      </td>
+    </tr>
   </table>
-
+  
   <button class="button-design">
     <%= link_to '一覧へ戻る', books_path %> 
   </button>

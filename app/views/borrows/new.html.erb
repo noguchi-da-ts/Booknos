@@ -24,6 +24,20 @@
       <td class="info-item">発売</td>
       <td class="info-value"><%= @book.released_at %></td>
     </tr>
+    <tr>
+      <td class="info-item">貸し出し状況</td>
+      <td class="info-value">
+        <% if @book.is_rentaled %>
+          <% @book.now_borrowers.each_with_index do |borrower, i| %>
+            <%= '、' if i >= 1 %>
+            <%= borrower.name %>さん
+          <% end %>
+          が借りています
+        <% else %>
+          現在借りている人はいません
+        <% end %>
+      </td>
+    </tr>
   </table>
 
   <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form txt-center" }) do |f| %>

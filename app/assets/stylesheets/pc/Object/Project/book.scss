@@ -1,11 +1,10 @@
 .p-books-index {
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
   li {
-    min-width: 25vw;
-    max-width: 300px;
+    width: 380px;
     height: 420px;
-    margin-bottom: 24px;
     padding: 6px 12px;
     border-bottom: 2px solid #ccc;
   }
@@ -29,6 +28,7 @@
 .p-book-link-buttons {
   display: flex;
   justify-content: space-between;
+  width: 80%;
   padding: 0 15%;
   button {
     font-weight: bold;

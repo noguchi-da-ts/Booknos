@@ -30,6 +30,11 @@
       <button>
         <%= link_to '借りる', new_borrow_path(id: book.id) %>
       </button>
+      <% if current_user.admin? && !current_user?(@user) %>
+        <button class="delete-box">
+          <%= link_to "削除", book, method: :delete, data: { confirm: "削除しますか?" } %>
+        </button>
+      <% end %>
     </div>
   </div>
 </li>

@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  include UsersHelper
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
