@@ -1,0 +1,119 @@
+.p-books-index {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  li {
+    width: 380px;
+    height: 420px;
+    padding: 6px 12px;
+    border-bottom: 2px solid #ccc;
+  }
+}
+
+.p-book-image {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
+
+.p-book-detail-mini {
+  overflow: scroll;
+  height: 160px;
+  padding: 1vh 5px;
+  .title {
+    font-weight: bolder;
+  }
+}
+
+.p-book-link-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 0 15%;
+  button {
+    font-weight: bold;
+    width: 90px;
+  }
+}
+
+.p-refine-search-form {
+  width: 100%;
+  justify-content: flex-end;
+  p {
+    margin: auto 24px auto 0;
+  }
+  .p-refine-search-field {
+    margin-right: 12px;
+  }
+}
+
+.p-book-show-img {
+  display: flex;
+  justify-content: center;
+  img {
+    height: 40vh;
+  }
+}
+
+.p-book-show-info {
+  border: 10px ridge gray;
+  width: 100%;
+  height: 50vh;
+  margin: 1vh auto;
+  background: white;
+  font-weight: bold;
+  .info-item {
+    padding: auto 1vw;
+    width: 25%;
+    font-size: 2vh;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+  .info-value {
+    padding-left: 2vw;
+    font-size: 2vh;
+    border-bottom: 1px solid black;
+    border-left: 2px dashed black;
+  }
+  a {
+    color: rgb(66, 66, 235);
+  }
+}
+
+.p-borrow-form {
+  width: 240px;
+  font-size: 2rem;
+  margin: 1vh auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(230, 230, 230);
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+  input {
+    border: none;
+    background: none;
+    color: black !important;
+  }
+}
+
+.p-return-books {
+  h4 {
+    margin-bottom: 48px;
+    font-weight: bold;
+  }
+}
+
+.p-isbn-search-form {
+  width: 40vw;
+  margin: 0 auto;
+  #isbn_form {
+    height: 48px;
+    font-size: 48px;
+  }
+}
+
+.p-book-manual-register {
+  input.str-length, textarea.txt-length {
+    margin-bottom: 24px;
+  }
+}

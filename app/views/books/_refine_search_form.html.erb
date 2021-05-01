@@ -1,0 +1,13 @@
+<div class="p-refine-search-form flex-row">
+  <p>タイトルのキーワードで絞り込む</p>
+
+  <%= form_tag(refine_search_path, method: :get, class: "flex-row") do %>
+
+    <div class="p-refine-search-field">
+      <%= text_field_tag :keyword %>
+    </div>
+
+    <%= submit_tag "検索", class: "" %>
+
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="p-session-login-form">
+  <%= form_for(:session, url: login_path, html: {class: "flex-col"}) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+      <div class="flex-row">
+        <%= f.check_box :remember_me %>
+        <p>ログイン状態を保持する</p>
+      </div>
+    <% end %>
+
+    <%= f.submit "ログイン", class: "button-design" %>
+  <% end %>
+
+  <p><%= link_to ">> 新規登録する!", signup_path %></p>
+</div>

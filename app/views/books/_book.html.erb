@@ -1,0 +1,40 @@
+<li>
+  <div class="flex-col">
+    <div class="p-book-image">
+      <%= link_to book_path(book.id), class: "p-book-image" do %>
+        <%= image_tag book.image_url ? book.image_url : 'book_gijutsusyo_it_set.png', 
+                      alt: "iamge #{book.title}", class: "" %>
+      <% end %>
+    </div>
+
+    <div class="p-book-detail-mini">
+      <p class="title"><%= book.title %></p>
+      <p class="author"><%= book.author %></p>
+      <p class="publish_date"><%= "発売 : #{book.released_at}" %></p>
+
+      <% if book.is_rentaled %>
+        <p>
+          <% book.now_borrowers.each_with_index do |borrower, i| %>
+            <%= '、' if i >= 1 %>
+            <%= borrower.name %>さん
+          <% end %>
+          が借りています
+        </p>
+      <% end %>
+    </div>
+
+    <div class="p-book-link-buttons">
+      <button>
+        <%= link_to '詳細', book_path(book.id) %>
+      </button>
+      <button>
+        <%= link_to '借りる', new_borrow_path(id: book.id) %>
+      </button>
+      <% if current_user.admin? && !current_user?(@user) %>
+        <button class="delete-box">
+          <%= link_to "削除", book, method: :delete, data: { confirm: "削除しますか?" } %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</li>

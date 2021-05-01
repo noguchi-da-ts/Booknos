@@ -1,7 +1,3 @@
-$(document).ready(function (){
-  console.log('本の登録機能JSを読み込みました');
-});
-
 $(document).on('click', '#isbn_submit_button', function (){
   let isbn = $('#isbn_form').val();
   isbn = normalizationIsbn(isbn);
@@ -10,7 +6,7 @@ $(document).on('click', '#isbn_submit_button', function (){
     console.log(`入力されたISBN: ${isbn}`);
     $.ajax({
       type: "GET",
-      url: "/books/ajax/ajax_book_register",
+      url: "/books/ajax_book_register",
       data: { 
         isbn_code: isbn
       }

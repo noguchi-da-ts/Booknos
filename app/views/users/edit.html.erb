@@ -1,0 +1,12 @@
+<% provide(:button_text, '変更を保存する') %>
+
+<div class="p-user-form">
+  <p>ユーザー情報変更</p>
+
+  <%= render 'form' %>
+
+  <div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" target="_blank">change</a>
+  </div>
+</div>

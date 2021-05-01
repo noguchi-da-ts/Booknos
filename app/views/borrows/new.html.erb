@@ -1,0 +1,52 @@
+<div class="flex-col">
+  <div class="p-book-show-img">
+    <%= image_tag @book.image_url ? @book.image_url : 'book_gijutsusyo_it_set.png', 
+                  alt: "iamge #{@book.title}", class: "" %>
+  </div>
+  <table class="p-book-show-info">
+    <tr>
+      <td class="info-item">タイトル</td>
+      <td class="info-value"><%= @book.title %></td>
+    </tr>
+    <tr>
+      <td class="info-item">サブタイトル</td>
+      <td class="info-value"><%= @book.sub_title %></td>
+    </tr>
+    <tr>
+      <td class="info-item">著者</td>
+      <td class="info-value"><%= @book.author %></td>
+    </tr>
+    <tr>
+      <td class="info-item">概要</td>
+      <td class="info-value"><%= @book.caption %></td>
+    </tr>
+    <tr>
+      <td class="info-item">発売</td>
+      <td class="info-value"><%= @book.released_at %></td>
+    </tr>
+    <tr>
+      <td class="info-item">貸し出し状況</td>
+      <td class="info-value">
+        <% if @book.is_rentaled %>
+          <% @book.now_borrowers.each_with_index do |borrower, i| %>
+            <%= '、' if i >= 1 %>
+            <%= borrower.name %>さん
+          <% end %>
+          が借りています
+        <% else %>
+          現在借りている人はいません
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <%= form_for(@borrow_request, url: borrows_path, method: :post, html: { class: "p-borrow-form txt-center" }) do |f| %>
+    <%= f.hidden_field :book_id, :value => @book.id  %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+    <%= f.submit 'この本を借りる' %>
+  <% end %>
+
+  <button class="button-design">
+    <%= link_to '一覧へ戻る', books_path %> 
+  </button>
+</div>

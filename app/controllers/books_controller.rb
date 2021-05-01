@@ -1,10 +1,17 @@
 class BooksController < ApplicationController
+  include UsersHelper
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all.page(params[:page])
+    @books = Book.all.page(params[:page]).per(18)
+  end
+
+  def refine_search
+    @books   = Book.where('title like ?', "%#{params[:keyword]}%").page(params[:page]).per(18)
+    @keyword = params[:keyword]
   end
 
   # GET /books/1
@@ -22,9 +29,9 @@ class BooksController < ApplicationController
     @rakuten_book = RequestBookInfo.search(params[:isbn_code])
     @book = Book.new
     if @rakuten_book
-      render partial: 'ajax_book_register'
+      render partial: 'books/ajax/ajax_book_register'
     else
-      render partial: 'ajax_manual_register'
+      render partial: 'books/ajax/ajax_manual_register'
     end
   end
 

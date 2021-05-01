@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(203, 229, 250);
+}
+
+.notifications {
+  width: 90%;
+  border: 3px solid #CCC;
+  margin: 4vh auto;
+  text-align: center;
+  font-size: 2vh;
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+  .alert {
+    background: gold;
+    margin-bottom: 0 !important;
+  }
+  .success {
+    background: lightgreen;
+  }
+}
+
+.content {
+  width: 80vw;
+  margin: auto;
+}

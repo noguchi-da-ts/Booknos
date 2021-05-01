@@ -1,0 +1,11 @@
+<%= render 'refine_search_form' %>
+
+<%= paginate @books %>
+
+<ul class="p-books-index no-padding flex-row">
+  
+  <%= render @books %>
+
+</ul>
+
+<%= paginate @books %>

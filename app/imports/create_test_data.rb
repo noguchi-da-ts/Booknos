@@ -16,7 +16,23 @@ class CreateTestData
     {isbn_code: '9784797396805'},
     {isbn_code: '9784873115658'},
     {isbn_code: '9784822257903'},
-    {isbn_code: '9784532321437'}
+    {isbn_code: '9784532321437'},
+    {isbn_code: '9784797393804'},
+    {isbn_code: '9784797393163'},
+    {isbn_code: '9784873116860'},
+    {isbn_code: '9784873119038'},
+    {isbn_code: '9784908686030'},
+    {isbn_code: '9784873117522'},
+    {isbn_code: '9784798063331'},
+    {isbn_code: '9784798163642'},
+    {isbn_code: '9784822292270'},
+    {isbn_code: '9784797375954'},
+    {isbn_code: '9784297119683'},
+    {isbn_code: '9784863541863'},
+    {isbn_code: '9784295008583'},
+    {isbn_code: '9784798063409'},
+    {isbn_code: '9784046042033'},
+    
   ]
 
   @@test_borrows = [
@@ -49,6 +65,7 @@ class CreateTestData
         book.item_url = response.item_url
         book.released_at = response.sales_date
         book.save!
+        puts "登録しました  =>  「#{response.title}」"
       elsif registered
         puts "登録済  =>  「#{response.title}」"
       else

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booknos</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <%= stylesheet_link_tag    'pc/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'pc/application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body class="drawer drawer--right">
+    <%= render 'layouts/header' %>
+
+    <% if flash.first %>
+      <div class="notifications">
+        <% flash.each do |key, value| %>
+          <div class="<%= key %>">
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    
+    <div class="content">
+      <%= yield %>
+    </div>
+    
+  </body>
+</html>
